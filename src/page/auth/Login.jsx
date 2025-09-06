@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import { FaCheck, FaLock, FaUser } from "react-icons/fa";
+import { FaBox, FaCheck, FaLock, FaUser } from "react-icons/fa";
 
 export function Login() {
     const navigate = useNavigate();
@@ -62,6 +62,7 @@ export function Login() {
 
             {/* Panel informativo */}
             <div className="info-panel">
+                <FaBox className="title-icon" />
                 <h2>Gestión de Almacenes</h2>
                 <p>
                     Este sistema permite administrar inventarios, controlar entradas y salidas de productos,
