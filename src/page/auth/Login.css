@@ -5,9 +5,11 @@
     gap: 3rem;
     /* separación entre login y panel */
     height: 100vh;
+    height: auto;       
     padding: 1rem;
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
     color: #fff;
+    flex-wrap: wrap;
 }
 
 .login-form {
@@ -190,3 +192,5 @@
 .info-panel li:nth-child(3) {
     animation-delay: 1s;
 }
+
+
