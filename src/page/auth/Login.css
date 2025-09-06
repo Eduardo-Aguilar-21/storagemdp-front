@@ -1,10 +1,12 @@
 .login-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem; /* separación entre login y panel */
   height: 100vh;
+  padding: 1rem;
   background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
 }
 
 .login-form {
@@ -90,6 +92,45 @@
 
 .login-footer a:hover {
   text-decoration: underline;
+}
+
+/* Panel informativo */
+.info-panel {
+  max-width: 350px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
+}
+
+.info-panel h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #f1f1f1;
+}
+
+.info-panel p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.info-panel ul {
+  list-style: none;
+  padding: 0;
+}   
+
+.info-panel li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.list-icon {
+  margin-right: 0.5rem;
+  color: #00ffcc;
 }
 
 @keyframes fadeIn {
