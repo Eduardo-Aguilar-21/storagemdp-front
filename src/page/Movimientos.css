@@ -1,0 +1,26 @@
+.movements-container {
+  background-color: var(--bs-body-bg);
+  min-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.movements-container h2 {
+  margin-bottom: 20px;
+  color: var(--bs-primary);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table .badge {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.d-flex.gap-2 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
