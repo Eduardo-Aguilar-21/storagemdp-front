@@ -1,13 +1,14 @@
-.movements-container {
+.inventory-container {
   background-color: var(--bs-body-bg);
   min-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode */
-.movements-container.dark {
+.inventory-container.dark {
   background-color: #1e1e1e;
   color: #fff;
 }
@@ -23,18 +24,18 @@
   border-color: #444 !important;
 }
 
-/* Íconos */
-.movements-container th svg {
+/* Íconos en cabecera */
+.inventory-container th svg {
   vertical-align: middle;
 }
 
-/* Asegura contraste */
-.movements-container.dark th,
-.movements-container.dark td {
+/* Asegura contraste en dark mode */
+.inventory-container.dark th,
+.inventory-container.dark td {
   color: #f1f1f1 !important;
 }
 
-.movements-container.dark h2 {
+.inventory-container.dark h2 {
   color: #f1f1f1;
 }
 

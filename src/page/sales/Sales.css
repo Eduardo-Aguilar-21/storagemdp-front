@@ -1,0 +1,22 @@
+.sales-container h2 {
+  font-weight: bold;
+}
+
+.sales-container .card {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.sales-container table td,
+.sales-container table th {
+  vertical-align: middle;
+}
+
+.product-table-wrapper {
+  max-height: 250px;  /* ajusta según lo que quieras */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+.product-table-wrapper table {
+  margin-bottom: 0; /* quita espacio extra */
+}

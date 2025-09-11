@@ -15,11 +15,12 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Sidebar.css"; // Aquí pondremos estilos extra
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 export function Sidebar() {
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
-    const [dark, setDark] = useState(true);
+    const { dark, setDark } = useTheme();
 
     return (
         <div className={`sidebar ${collapsed ? "collapsed" : ""} ${dark ? "dark" : ""}`}>
@@ -37,6 +38,10 @@ export function Sidebar() {
                 <Nav.Link href="/dashboard">
                     <FaHome className="icon" />
                     <span className="text">Dashboard</span>
+                </Nav.Link>
+                <Nav.Link href="/gestionar-venta">
+                    <FaWallet className="icon" />
+                    <span className="text">Gestionar venta</span>
                 </Nav.Link>
                 <Nav.Link href="/inventario">
                     <FaChartBar className="icon" />
