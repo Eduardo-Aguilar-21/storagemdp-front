@@ -1,0 +1,22 @@
+.users-container {
+  padding: 20px;
+}
+
+.user-table {
+  margin-top: 15px;
+}
+
+.user-table.dark table {
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+.user-table.dark table th,
+.user-table.dark table td {
+  border-color: #444;
+}
+
+.modal.dark .modal-content {
+  background-color: #1e1e2f;
+  color: #fff;
+}

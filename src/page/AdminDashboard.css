@@ -1,0 +1,15 @@
+.admin-dashboard.dark {
+  background-color: #121212;
+  color: #eee;
+  min-height: 100vh;
+}
+
+.dashboard-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 12px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}

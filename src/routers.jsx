@@ -5,6 +5,10 @@ import { Movimientos } from "./page/Movimientos";
 import { Inventory } from "./components/Inventory";
 import Reports from "./page/reports/Reports";
 import { Sales } from "./page/sales/Sales";
+import Users from "./page/admin/users/Users";
+import Companies from "./page/admin/company/Companies";
+import AdminDashboard from "./page/AdminDashboard";
+
 
 
 export const routes = [
@@ -20,7 +24,19 @@ export const routes = [
             { path: '/movimientos', element: <Movimientos /> },
             { path: '/inventario', element: <Inventory /> },
             { path: '/reportes', element: <Reports /> },
-            { path: '/gestionar-venta', element: <Sales /> },
+            { path: '/venta', element: <Sales /> },
+            { path: '/admin', element: <AdminDashboard /> },
+            { path: '/admin/users', element: <Users /> },
+            { path: '/admin/empresas', element: <Companies /> },
+
         ],
     }
 ]
+
+/*
+    { path: '/admin/clients', element: <Clients /> },
+            { path: '/admin/providers', element: <Providers /> },
+            { path: '/admin/roles', element: <Roles /> },
+            { path: '/admin/settings', element: <Settings /> },
+
+*/

@@ -5,6 +5,7 @@ import Cart from "./Cart";
 import PaymentPanel from "./PaymentPanel";
 import SaleSummary from "./SaleSummary";
 import "./Sales.css";
+import Swal from "sweetalert2";
 
 export function Sales() {
   const [products, setProducts] = useState([]); // catálogo de productos
@@ -50,6 +51,33 @@ export function Sales() {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
+  const finalizeSale = () => {
+    if (cart.length === 0) {
+      Swal.fire("⚠️ Carrito vacío", "Agrega al menos un producto", "warning");
+      return;
+    }
+
+    if (!payment.method || payment.received < total) {
+      Swal.fire("❌ Pago inválido", "El monto recibido es insuficiente", "error");
+      return;
+    }
+
+    Swal.fire({
+      title: "✅ Venta registrada",
+      html: `
+        <p><strong>Total:</strong> S/ ${total.toFixed(2)}</p>
+        <p><strong>Método:</strong> ${payment.method}</p>
+        <p><strong>Recibido:</strong> S/ ${payment.received}</p>
+        <p><strong>Cambio:</strong> S/ ${(payment.received - total).toFixed(2)}</p>
+      `,
+      icon: "success",
+      confirmButtonText: "OK",
+    }).then(() => {
+      setCart([]); // limpia carrito
+      setPayment({ method: "Efectivo", received: 0 }); // resetea pago
+    });
+  };
+
   return (
     <Container fluid className="sales-container p-3">
       <h2 className="mb-4">🛒 Nueva Venta</h2>
@@ -73,13 +101,9 @@ export function Sales() {
 
           <Card className="p-3">
             <SaleSummary
-              total={cart.reduce((acc, p) => acc + p.price * p.qty, 0)}
+              total={total}
               payment={payment}
-              onFinalize={() => {
-                alert("✅ Venta registrada con éxito");
-                setCart([]); // limpia carrito
-                setPayment({ method: "", received: 0 }); // resetea pago
-              }}
+              onFinalize={finalizeSale}
             />
           </Card>
         </Col>

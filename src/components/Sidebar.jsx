@@ -6,14 +6,20 @@ import {
     FaChartBar,
     FaBell,
     FaChartPie,
-    FaHeart,
     FaWallet,
     FaSignOutAlt,
     FaMoon,
     FaSun,
+    FaCog,
+    FaTruckLoading,
+    FaUserCircle,
+    FaTags,
+    FaTruck,
+    FaCashRegister,
+    FaExclamationTriangle,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Sidebar.css"; // Aquí pondremos estilos extra
+import "./Sidebar.css";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
@@ -39,34 +45,68 @@ export function Sidebar() {
                     <FaHome className="icon" />
                     <span className="text">Dashboard</span>
                 </Nav.Link>
-                <Nav.Link href="/gestionar-venta">
+
+                <Nav.Link href="/ventas">
                     <FaWallet className="icon" />
-                    <span className="text">Gestionar venta</span>
+                    <span className="text">Gestionar Venta</span>
                 </Nav.Link>
+
+                <Nav.Link href="/compras">
+                    <FaTruckLoading className="icon" />
+                    <span className="text">Ingresos a Inventario</span>
+                </Nav.Link>
+
                 <Nav.Link href="/inventario">
                     <FaChartBar className="icon" />
                     <span className="text">Inventario</span>
                 </Nav.Link>
+
                 <Nav.Link href="/movimientos">
                     <FaBell className="icon" />
                     <span className="text">Movimientos</span>
                 </Nav.Link>
+
+                <Nav.Link href="/promociones">
+                    <FaTags className="icon" />
+                    <span className="text">Promociones y Descuentos</span>
+                </Nav.Link>
+
+                <Nav.Link href="/logistica">
+                    <FaTruck className="icon" />
+                    <span className="text">Logística</span>
+                </Nav.Link>
+
+                <Nav.Link href="/finanzas">
+                    <FaCashRegister className="icon" />
+                    <span className="text">Cajas y Finanzas</span>
+                </Nav.Link>
+
+                <Nav.Link href="/alertas">
+                    <FaExclamationTriangle className="icon" />
+                    <span className="text">Notificaciones y Alertas</span>
+                </Nav.Link>
+
                 <Nav.Link href="/reportes">
                     <FaChartPie className="icon" />
                     <span className="text">Reportes</span>
                 </Nav.Link>
-                <Nav.Link href="/usuarios">
-                    <FaHeart className="icon" />
-                    <span className="text">Usuarios</span>
+
+                <Nav.Link href="/admin">
+                    <FaCog className="icon" />
+                    <span className="text">Administración</span>
                 </Nav.Link>
-                <Nav.Link href="/wallets">
-                    <FaWallet className="icon" />
-                    <span className="text">Wallets</span>
+
+                <Nav.Link href="/perfil">
+                    <FaUserCircle className="icon" />
+                    <span className="text">Perfil</span>
                 </Nav.Link>
             </Nav>
 
             <div className="sidebar-footer mt-auto p-2 d-flex flex-column gap-2">
-                <button className="btn btn-outline-danger d-flex align-items-center" onClick={() => navigate("/login")}>
+                <button
+                    className="btn btn-outline-danger d-flex align-items-center"
+                    onClick={() => navigate("/login")}
+                >
                     <FaSignOutAlt className="icon me-2" />
                     Logout
                 </button>
